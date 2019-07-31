@@ -1,0 +1,23 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Аналіз текстів</title>
+</head>
+<body>
+    @using (Html.BeginForm("TextAnalyze", "Home", FormMethod.Post))
+    {
+        <div>
+            @Html.TextArea("text", "", 40, 50, null)
+        </div>
+        <div>
+            <input type="submit" value="Analize" />
+        </div>
+    }
+</body>
+</html>

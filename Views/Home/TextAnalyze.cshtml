@@ -1,0 +1,31 @@
+﻿    @model List<TestTask.Interfaces.IMetrics>
+
+    @{
+
+        Layout = null;
+    }
+
+    <!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Text</title>
+    </head>
+    <body>
+        <div>
+            @foreach (TestTask.Interfaces.IMetrics item in Model)
+            {
+                item.CalculateMetric(ViewBag.Text);
+                <p>@item.Description</p>
+                <p>@item.Result</p>
+            }
+        </div>
+        @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+        {
+            <div>
+                <input type="submit" value="Back" />
+            </div>
+        }
+    </body>
+</html>
